@@ -1,0 +1,70 @@
+<div class="container-fluid mt-2 p-5">
+  <h2  >Demo {{ title }}</h2>
+  <h2  >Demo {{ title }}</h2>
+  <h2  >Demo {{ title }}</h2>
+  <p [class.active]="isActive">Status</p>
+  <input [(ngModel)]="name1" /> 
+  <button  (click)="changeText()">Change</button>
+  <div class="row">
+    <div class="col-4 bg-light p-4 rounded">
+      
+      <form #f="ngForm" (ngSubmit)="onSubmit(f)" autocomplete="off">
+        <input type="hidden" name="id" [(ngModel)]="student.id" />
+
+        <div class="form-group p-2">
+          <label>First Name</label>
+          <input type="text" class="form-control" name="firstName" [(ngModel)]="student.firstName" required placeholder="Firstname" />
+        </div>
+        <div class="form-group p-2">
+          <label>Last Name</label>
+          <input type="text" class="form-control" name="lastName" [(ngModel)]="student.lastName" required placeholder="Lastname" />
+        </div>
+        <div class="form-group p-2">
+          <label>Email</label>
+          <input type="email" class="form-control" name="email" [(ngModel)]="student.email" required />
+        </div>
+        <div class="form-group p-2">
+          <label>Password</label>
+          <input type="password" class="form-control" name="password" [(ngModel)]="student.password" required />
+        </div>
+        <div class="form-group p-2">
+          <label>Course</label>
+          <input type="text" class="form-control" name="course" [(ngModel)]="student.course" />
+        </div>
+        <div class="form-group p-2">
+          <label>City</label>
+          <input type="text" class="form-control" name="city" [(ngModel)]="student.city" />
+        </div>
+        <div class="form-group p-2">
+          <label>Phone Number</label>
+          <input type="number" class="form-control" name="phoneNumber" [(ngModel)]="student.phoneNumber" />
+        </div>
+        <button type="submit" class="btn btn-primary mt-2" [disabled]="f.invalid">
+          Submit
+        </button>
+        
+      </form>
+    </div>
+    
+    <!--Table-->
+    <div class="col-6">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Edit</th>
+            <th>ID</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>City</th>
+            <th>Phone</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    
+  </div>
+  <!-- <input (input)="onType($event)"> -->
+</div>
